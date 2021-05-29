@@ -3,7 +3,6 @@ import os
 import json
 from discord.ext import commands
 from discord.ext.commands import has_permissions, CheckFailure, MissingRequiredArgument
-from keep_alive import keep_alive
 
 client = commands.Bot(command_prefix = "+")
 
@@ -131,5 +130,4 @@ async def on_command_error(ctx, error):
       await ctx.send(f"An error occured! ```{error}```")
     raise error
 
-keep_alive()
 client.run(os.getenv("TOKEN"))
